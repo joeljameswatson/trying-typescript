@@ -1,3 +1,3 @@
 ## Trying Typescript
 
-Testing out create-react-app's typescript set up
+Testing create-react-app's typescript set up
