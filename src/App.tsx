@@ -1,30 +1,30 @@
-import "./App.css";
+import React from "react";
 
-import React, { Component } from "react";
-
-import logo from "./logo.svg";
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload yo.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+class Student {
+  fullName: string;
+  constructor(
+    public firstName: string,
+    public middleInitial: string,
+    public lastName: string
+  ) {
+    this.fullName = `${firstName} ${middleInitial} ${lastName}`;
   }
 }
+
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+const App = () => {
+  function greet(person: Person) {
+    return `Hello, ${person.firstName} ${person.lastName}`;
+  }
+
+  const user = new Student("Jane", "M.", "User");
+  const greetText = greet(user);
+
+  return <div className="App">{greetText}</div>;
+};
 
 export default App;
